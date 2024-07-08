@@ -6,5 +6,5 @@ export default defineConfig({
   // prebundle: {
   //   deps: {}
   // },
-  sourcemap: true,
+  // sourcemap: true,
 });

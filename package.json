@@ -1,7 +1,7 @@
 {
   "name": "smooth-output",
   "version": "0.0.1",
-  "description": "make ouput smooth~ (with sse or something else)",
+  "description": "make output smooth~ (with sse or something else)",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "keywords": [],
+  "keywords": ["stream", "sse", "output", "smooth"],
   "authors": [
     "hurry"
   ],

@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
     "baseUrl": "./"
   }
 }
