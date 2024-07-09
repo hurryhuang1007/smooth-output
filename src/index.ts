@@ -134,12 +134,16 @@ class SmoothOutput {
     this._callLoop();
   }
 
-  async dispose() {
+  async beDisposed() {
     // const handle = Promise.withResolvers<void>();
     // this._disposed = handle.resolve;
     // return handle.promise;
     return new Promise<void>((resolve) => {
       this._disposed = resolve;
+
+      if (this._outputted === this._inputted) {
+        resolve();
+      }
     });
   }
 }
