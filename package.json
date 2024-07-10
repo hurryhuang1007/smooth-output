@@ -15,7 +15,7 @@
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "keywords": ["stream", "sse", "output", "smooth"],
+  "keywords": ["stream", "sse", "output", "smooth", "text", "llm"],
   "authors": [
     "hurry"
   ],
