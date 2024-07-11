@@ -1,6 +1,6 @@
 {
   "name": "smooth-output",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "make output smooth~ (with sse or something else)",
   "repository": {
     "type": "git",
