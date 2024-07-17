@@ -25,6 +25,45 @@ SmoothOutput is a utility class designed to smoothly output strings at a control
 npm install smooth-output
 ```
 
+## Basic Usage
+
+```javascript
+import SmoothOutput from 'smooth-output';
+
+const so = new SmoothOutput((output) => {
+  console.log('output', output);
+});
+so.input('Hello, world! ');
+setTimeout(() => {
+  so.input('This is a test.');
+}, 1000);
+
+// console log may be:
+
+// output Hell
+// output Hello, w
+// ...
+// output Hello, world! 
+
+// output Hello, world! T
+// output Hello, world! Th
+// output Hello, world! Thi
+// ...
+// output Hello, world! This is a test.
+```
+
+## Example
+
+see <https://codesandbox.io/p/sandbox/smooth-output-live-demo-qjdc48>
+
+## React Example
+
+TODO
+
+## Vue Example
+
+TODO
+
 ## Constructor Parameters
 
 - output (function): A callback function to receive the output string at each step.
@@ -45,18 +84,6 @@ input(str: string): void
 async beDisposed(): Promise\<void>
 
 - Mark the instance as disposed. It is not necessary to call this function, but calling this function will get an output end Promise.
-
-## Example
-
-see <https://codesandbox.io/p/sandbox/smooth-output-live-demo-qjdc48>
-
-## React Example
-
-TODO
-
-## Vue Example
-
-TODO
 
 ## LICENSE
 

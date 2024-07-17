@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.24.8
+        version: 7.24.8
     devDependencies:
       father:
         specifier: ^4.5.0-rc.2
@@ -109,6 +113,10 @@ packages:
 
   '@babel/runtime@7.23.6':
     resolution: {integrity: sha512-zHd0eUrf5GZoOWVCXp6koAKQTfZV07eit6bGPmJgnZdnSAvvZee6zniW2XMF7Cmc4ISOOnPy3QaSiIJGJkVEDQ==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.24.8':
+    resolution: {integrity: sha512-5F7SDGs1T72ZczbRwbGO9lQi0NLjQxzl6i4lJxLxfW9U5UluCSyEJeniWvnhl3/euNiqQVbo8zruhsDfid0esA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.24.7':
@@ -3249,6 +3257,10 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.7
 
   '@babel/runtime@7.23.6':
+    dependencies:
+      regenerator-runtime: 0.14.1
+
+  '@babel/runtime@7.24.8':
     dependencies:
       regenerator-runtime: 0.14.1
 

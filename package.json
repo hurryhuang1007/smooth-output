@@ -1,6 +1,6 @@
 {
   "name": "smooth-output",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "make output smooth~ (with sse or something else)",
   "repository": {
     "type": "git",
@@ -13,9 +13,17 @@
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepublishOnly": "father doctor && npm run build",
+    "doctor": "father doctor"
   },
-  "keywords": ["stream", "sse", "output", "smooth", "text", "llm"],
+  "keywords": [
+    "stream",
+    "sse",
+    "output",
+    "smooth",
+    "text",
+    "llm"
+  ],
   "authors": [
     "hurry"
   ],
@@ -29,5 +37,8 @@
   },
   "devDependencies": {
     "father": "^4.5.0-rc.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.24.8"
   }
 }
