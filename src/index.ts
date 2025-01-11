@@ -1,5 +1,9 @@
 export type PutType = "full" | "slice";
 
+/**
+ * SmoothOutput class for implementing smooth text output effects
+ * Commonly used for handling SSE (Server-Sent Events) text output scenarios
+ */
 class SmoothOutput {
   private _lastInputTime = Date.now();
   private _appendEndTime = 0; // The end time when the current input is completely output to the output
@@ -21,6 +25,18 @@ class SmoothOutput {
   private _inputted = "";
   private _outputted = "";
 
+  /**
+   * Creates a new instance of SmoothOutput
+   * @param output Callback function that receives the output text at each step
+   * @param options Configuration options
+   * @param options.fps Frames per second, controls output update frequency, defaults to 40
+   * @param options.useRAF Whether to use requestAnimationFrame for output updates, defaults to true
+   * @param options.minStepTime Minimum time to process input (milliseconds), defaults to 100
+   * @param options.maxStepTime Maximum time to process input (milliseconds), defaults to 2000
+   * @param options.randomStepTimeMaxDiff Maximum random reduction in processing time (milliseconds), used to simulate human typing and thinking, defaults to 200
+   * @param options.inputType Input type, can be "full" or "slice", defaults to "slice"
+   * @param options.outputType Output type, can be "full" or "slice", defaults to "full"
+   */
   constructor(
     output: (s: string) => void,
     {
@@ -111,7 +127,12 @@ class SmoothOutput {
     }
   }
 
-  input(str: string) {
+  /**
+   * Inputs a string and outputs it smoothly according to the configured rhythm parameters
+   * @param str The string to be output
+   * @throws Error if the instance has been disposed
+   */
+  input(str: string): void {
     if (this._disposed) {
       throw new Error("SmoothOutput instance has been disposed");
     }
@@ -134,7 +155,12 @@ class SmoothOutput {
     this._callLoop();
   }
 
-  async beDisposed() {
+  /**
+   * Marks the instance as disposed
+   * Call this function to get a Promise that resolves when output is complete
+   * @returns A Promise that resolves when all output is complete
+   */
+  async beDisposed(): Promise<void> {
     // const handle = Promise.withResolvers<void>();
     // this._disposed = handle.resolve;
     // return handle.promise;

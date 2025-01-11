@@ -1,6 +1,6 @@
 {
   "name": "smooth-output",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Make the output smoother~ (commonly used for handling SSE text output scenarios)",
   "repository": {
     "type": "git",
